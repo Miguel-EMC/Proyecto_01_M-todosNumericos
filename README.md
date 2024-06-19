@@ -29,3 +29,5 @@ Un avión vuela con velocidad $V$ a $H_a$ metros sobre el nivel del mar en direc
 Puedes acceder al código del proyecto en Google Colab mediante el siguiente enlace:
 
 [![Acceder al código en Colab](assets/dev.png)](https://colab.research.google.com/drive/1w75m-0CG3L6UNllu3PwklSzzWogN5W-w)
+
+## Diagrama_de_flujo 💻
