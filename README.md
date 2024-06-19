@@ -31,3 +31,8 @@ Puedes acceder al código del proyecto en Google Colab mediante el siguiente enl
 
 
 ## Diagrama_de_flujo 💻
+
+
+
+![Diagrama_de_flujo](https://github.com/Miguel-EMC/Proyecto_01_M-todosNumericos/assets/74844624/a6d77649-823f-48b2-95be-7a6e7e8dfdb1)
+
