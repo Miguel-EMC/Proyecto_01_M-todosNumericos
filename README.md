@@ -28,6 +28,6 @@ Un avión vuela con velocidad $V$ a $H_a$ metros sobre el nivel del mar en direc
 
 Puedes acceder al código del proyecto en Google Colab mediante el siguiente enlace:
 
-<a href="[[https://www.python.org](https://colab.research.google.com/drive/1H6pX-K0Lf2JkuSz6xq4a0hr75nCUYeM9?usp=sharing#scrollTo=wpy5q3Y_IXYJ)](https://colab.research.google.com/drive/1H6pX-K0Lf2JkuSz6xq4a0hr75nCUYeM9?usp=sharing#scrollTo=wpy5q3Y_IXYJ)" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a>
+<a href="[[[https://www.python.org](https://colab.research.google.com/drive/1H6pX-K0Lf2JkuSz6xq4a0hr75nCUYeM9?usp=sharing#scrollTo=wpy5q3Y_IXYJ)]([https://colab.research.google.com/drive/1H6pX-K0Lf2JkuSz6xq4a0hr75nCUYeM9?usp=sharing#scrollTo=wpy5q3Y_IXYJ](https://colab.research.google.com/drive/1H6pX-K0Lf2JkuSz6xq4a0hr75nCUYeM9?usp=sharing#scrollTo=wpy5q3Y_IXYJ))](https://colab.research.google.com/drive/1H6pX-K0Lf2JkuSz6xq4a0hr75nCUYeM9?usp=sharing#scrollTo=wpy5q3Y_IXYJ)" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a>
 
 ## Diagrama_de_flujo 💻
