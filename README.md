@@ -13,7 +13,7 @@ _Todos los colaboradores del proyecto desde sus inicios son:_
 - [Descripción](#Descripción)
 - [Google_Colab](#Google_Colab)
 - [Diagrama_de_flujo](#Diagrama_de_flujo)
-
+- [Librerías_necesarias](#Librerías_necesarias)
 
 ## Objetivo 💻
 Grafique la trayectoria de la bomba y el punto de impacto.
@@ -21,6 +21,14 @@ Grafique la trayectoria de la bomba y el punto de impacto.
 ## Descripción 📋
 Un avión vuela con velocidad $V$ a $H_a$ metros sobre el nivel del mar en dirección a una montaña con forma de triángulo isósceles, con altura $H_m$ y ángulo $\alpha$ con respecto al horizonte. Cuando el avión se encuentra a una distancia $d$ del pico de la montaña, suelta una bomba.
 
+
+## Librerías_necesarias 💻
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+import sympy as sp
+from ipywidgets import interact, FloatSlider
+```
 
 
 ## Google_Colab 💻
