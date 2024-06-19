@@ -1,0 +1,91 @@
+Inicio del pseudocódigo:
+
+Función dibujar_triangulo_isosceles(v, hm, ha, d, angle):
+    Si ha <= hm entonces
+        Imprimir "Error: La altura del avión debe ser mayor que la altura de la montaña (ha > hm)."
+        Retornar
+    Fin Si
+    
+    half_base = hm / tangente(radianes(angle))
+    x_montana = [d, d - half_base, d + half_base, d]
+    y_montana = [hm, 0, 0, hm]
+
+    Crear_figura_y_eje()
+    Dibujar(x_montana, y_montana, 'b-', etiqueta='Montaña')
+
+    x_inicio_avion = d - 2 * half_base - 20
+    x_avion = linspace(x_inicio_avion, x_inicio_avion + 500, 500)
+    y_avion = llenar_como(x_avion, ha)
+
+    x_suelta_bomba = d - d
+    y_suelta_bomba = ha
+
+    tiempo_impacto, x_impacto, y_impacto, trayectorias_x, trayectorias_y = 
+        calcular_trayectoria_bomba(v, ha, x_suelta_bomba, d, half_base, hm)
+
+    Imprimir "Punto de impacto: ({x_impacto:.2f}, {y_impacto:.2f})"
+    Dibujar(trayectorias_x, trayectorias_y, 'r--', etiqueta='Trayectoria de la bomba')
+    Dibujar(x_avion, y_avion, 'g-', etiqueta='Trayectoria del avión')
+    Dibujar(x_suelta_bomba, ha, 'ro', etiqueta='Posición inicial de la bomba')
+    Dibujar(x_impacto, y_impacto, 'go', etiqueta='Punto de impacto')
+
+    Ajustar_límites_del_gráfico(0, máximo(d + half_base + 20, x_impacto + 20), 0, máximo(hm + 2, ha + 2))
+    Añadir_líneas_de_cuadrícula()
+    Mantener_proporción_del_eje('auto')
+    Añadir_leyenda()
+    Mostrar_gráfico()
+
+Fin de la función dibujar_triangulo_isosceles
+
+Función calcular_trayectoria_bomba(v, ha, x_avion, d, half_base, hm):
+    g = 9.81
+    t = Símbolo('t')
+    f = ha - 0.5 * g * t**2
+    f_prime = derivar(f, t)
+
+    t_n = 10.0
+    tol = 1e-6
+    max_iter = 1000
+    iter_count = 0
+
+    Mientras valor_absoluto(f_sustituir(t, t_n)) > tol y iter_count < max_iter hacer
+        t_n = t_n - f_sustituir(t, t_n) / f_prime_sustituir(t, t_n)
+        iter_count = iter_count + 1
+    Fin Mientras
+
+    tiempo_impacto = convertir_a_flotante(t_n)
+    x_impacto = x_avion + v * tiempo_impacto
+
+    tiempos = linspace(0, tiempo_impacto, número=500)
+    trayectorias_x = x_avion + v * tiempos
+    trayectorias_y = ha - 0.5 * g * tiempos**2
+
+    y_impacto = 0
+
+    Para i en rango(longitud(trayectorias_x)) hacer
+        Si trayectorias_x[i] >= d - half_base y trayectorias_x[i] <= d + half_base entonces
+            y_montana_actual = hm - hm * valor_absoluto((trayectorias_x[i] - d) / half_base)
+            Si trayectorias_y[i] <= y_montana_actual entonces
+                trayectorias_x = sublista(trayectorias_x, 0, i+1)
+                trayectorias_y = sublista(trayectorias_y, 0, i+1)
+                x_impacto = trayectorias_x[-1]
+                y_impacto = trayectorias_y[-1]
+                Romper
+            Fin Si
+        Fin Si
+    Fin Para
+
+    Retornar tiempo_impacto, x_impacto, y_impacto, trayectorias_x, trayectorias_y
+
+Fin de la función calcular_trayectoria_bomba
+
+Interactuar_con(
+    dibujar_triangulo_isosceles,
+    v=deslizador_flotante(valor=100.0, mínimo=1.0, máximo=300.0, paso=1.0, descripción='Velocidad del avión (v):'),
+    hm=deslizador_flotante(valor=10.0, mínimo=1.0, máximo=1500.0, paso=1.0, descripción='Altura de la montaña (hm):'),
+    ha=deslizador_flotante(valor=12.0, mínimo=1.0, máximo=2000.0, paso=1.0, descripción='Altura del avión (ha):'),
+    d=deslizador_flotante(valor=10.0, mínimo=1.0, máximo=1000.0, paso=1.0, descripción='Distancia de suelta de la bomba (d):'),
+    angle=deslizador_flotante(valor=45.0, mínimo=1.0, máximo=85.0, paso=1.0, descripción='Ángulo de inclinación de la montaña (angle):')
+)
+
+Fin del pseudocódigo
